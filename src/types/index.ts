@@ -18,3 +18,12 @@ export type Translate = {
     }
   }
 }
+
+export type Label =
+  | 'identity_attack'
+  | 'insult'
+  | 'obscene'
+  | 'severe_toxicity'
+  | 'sexual_explicit'
+  | 'threat'
+  | 'toxicity'
