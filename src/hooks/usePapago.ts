@@ -19,12 +19,16 @@ const postTranslate = async (message: string) => {
 
 const usePapago = () => {
   const [data, setData] = useState<any>()
+  const [isLoading, setIsLoading] = useState(false)
+
   const translate = useCallback(async (message: string) => {
+    setIsLoading(true)
     const papagoData = await postTranslate(message)
     setData(papagoData)
+    setIsLoading(false)
     return papagoData
   }, [])
-  return { data, translate }
+  return { isLoading, data, translate }
 }
 
 export default usePapago
