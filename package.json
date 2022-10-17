@@ -8,13 +8,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@google-cloud/translate": "^7.0.3",
+    "@jaewoong2/modal": "^0.1.6",
     "@tensorflow-models/toxicity": "^1.2.2",
     "@tensorflow/tfjs": "^3.21.0",
     "axios": "^0.27.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.2",
-    "@google-cloud/translate": "^7.0.3",
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
