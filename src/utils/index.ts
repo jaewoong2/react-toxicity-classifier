@@ -1,10 +1,16 @@
 export const getFeeling = (threshold?: number) => {
   if (!threshold) return '🤔'
+  if (threshold < 0.2) {
+    return '😃'
+  }
+  if (threshold < 0.3) {
+    return '😕'
+  }
   if (threshold < 0.5) {
-    return '😁'
+    return '😕'
   }
   if (threshold < 0.8) {
-    return '🤨'
+    return '😨'
   }
   return '🤬'
 }

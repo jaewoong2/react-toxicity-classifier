@@ -1,5 +1,5 @@
-import { getKoreanLabel } from '@/utils'
 import React from 'react'
+import { getKoreanLabel } from '@/utils'
 import useChatValueContext from '../hooks/useChatValueContext'
 
 const Predictions = ({ index }: { index: number }) => {

@@ -27,7 +27,12 @@ const Messages = () => {
   return (
     <ul className="min-h-[400px] max-w-[600px] bg-gray-300 p-3 flex flex-col gap-1 items-end overflow-y-scroll max-h-[700px]">
       {messages?.map((msg, i) => (
-        <button type="button" className="flex gap-2 items-center" onClick={onClickMessage(i)}>
+        <button
+          key={`${msg}-${+i}`}
+          type="button"
+          className="flex gap-2 items-center"
+          onClick={onClickMessage(i)}
+        >
           <p className="text-xs text-gray-600 italic">
             {msg?.prediction?.[6]?.results[0]?.probabilities[1].toString().slice(0, 6)}
           </p>
