@@ -1,6 +1,7 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useRef } from 'react'
 import axios from 'axios'
 import { Translate } from '@/types'
+import { useMutation } from 'react-query'
 
 const postTranslate = async (message: string) => {
   const data = await axios.post<Translate>(
@@ -18,17 +19,22 @@ const postTranslate = async (message: string) => {
 }
 
 const usePapago = () => {
-  const [data, setData] = useState<any>()
-  const [isLoading, setIsLoading] = useState(false)
+  const { mutate, ...mutation } = useMutation(postTranslate)
+  const cache = useRef(new Map<string, string>())
 
   const translate = useCallback(async (message: string) => {
-    setIsLoading(true)
+    const cachedMessage = cache.current.get(message)
+    if (cachedMessage) {
+      return cachedMessage
+    }
+
     const papagoData = await postTranslate(message)
-    setData(papagoData)
-    setIsLoading(false)
+    cache.current.set(message, papagoData)
+    mutate(papagoData)
     return papagoData
   }, [])
-  return { isLoading, data, translate }
+
+  return { mutate, translate, ...mutation }
 }
 
 export default usePapago
