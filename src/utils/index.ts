@@ -7,7 +7,7 @@ export const getFeeling = (threshold?: number) => {
     return '😕'
   }
   if (threshold < 0.5) {
-    return '😕'
+    return '🥺'
   }
   if (threshold < 0.8) {
     return '😨'
