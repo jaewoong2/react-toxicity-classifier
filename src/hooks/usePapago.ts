@@ -34,7 +34,7 @@ const usePapago = () => {
     return papagoData
   }, [])
 
-  return { mutate, translate, ...mutation }
+  return { mutate, translate, cache: cache.current, ...mutation }
 }
 
 export default usePapago

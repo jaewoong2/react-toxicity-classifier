@@ -3,15 +3,17 @@ import React, { PropsWithChildren, useMemo } from 'react'
 import { ChatActionContext, ChatValueContext } from './ChatContext'
 
 const ChatContextProvider = ({ children }: PropsWithChildren) => {
-  const { message, messages, isLoading, onChangeMessage, onSubmitMessage } = useMessage()
+  const { message, messages, isLoading, onChangeMessage, onSubmitMessage, messageCache } =
+    useMessage()
 
   const value = useMemo(() => {
     return {
       message,
       messages,
       isLoading,
+      messageCache,
     }
-  }, [message, messages, isLoading])
+  }, [message, messages, isLoading, messageCache])
 
   const action = useMemo(() => {
     return {

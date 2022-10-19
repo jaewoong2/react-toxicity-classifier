@@ -5,6 +5,7 @@ type ChatValue = {
   message: string
   messages: Message[]
   isLoading: boolean
+  messageCache: Map<string, string>
 }
 
 type ChatAction = {
@@ -16,6 +17,7 @@ const initValue: ChatValue = {
   message: '',
   messages: [],
   isLoading: false,
+  messageCache: new Map(),
 }
 
 const initAction: ChatAction = {

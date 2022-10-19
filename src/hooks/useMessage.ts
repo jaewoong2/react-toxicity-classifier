@@ -6,8 +6,9 @@ import useToxicityPrecition from './useToxicityPrecition'
 const useMessage = () => {
   const [messages, setMessages] = useState<Message[]>([])
   const [message, setMessage] = useState('')
+
   const { isLoading: predictLoading, predict, predictions } = useToxicityPrecition(0.9)
-  const { translate, isLoading: translateLoading } = usePapago()
+  const { translate, isLoading: translateLoading, cache } = usePapago()
 
   const onChangeMessage: React.ChangeEventHandler<HTMLInputElement> = useCallback((e) => {
     setMessage(e.target.value)
@@ -26,6 +27,7 @@ const useMessage = () => {
   return {
     messages,
     message,
+    messageCache: cache,
     onChangeMessage,
     onSubmitMessage,
     isLoading: predictLoading || translateLoading,
