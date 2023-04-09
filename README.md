@@ -6,10 +6,20 @@
 
 ![image](https://user-images.githubusercontent.com/63512217/196638245-f6e3208c-35cb-42d0-bf99-8820f6fe9448.png)
 
+
+https://user-images.githubusercontent.com/63512217/230769211-aa088a58-e0c1-43f6-91f4-0724141901c1.mov
+
+
+
+https://user-images.githubusercontent.com/63512217/230769222-ebbe02bc-f068-418e-be57-ef0661559891.MOV
+
 ### 실행 및 사용 법
 
 ```bash
-git clone https://github.com/jaewoong2/react-toxicity-classifier
+git clone https://github.com/jaewoong2/re
+
+
+act-toxicity-classifier
 yarn
 yarn dev
 ```
