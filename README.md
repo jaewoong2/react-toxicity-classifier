@@ -9,7 +9,7 @@
 ### 실행 및 사용 법
 
 ```bash
-git clone https://github.com/jaewoong2/22-graduation
+git clone https://github.com/jaewoong2/react-toxicity-classifier
 yarn
 yarn dev
 ```
